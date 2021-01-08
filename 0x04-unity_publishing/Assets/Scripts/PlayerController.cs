@@ -33,21 +33,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey("d")) {
-            rb.AddForce(speed * Time.deltaTime, 0, 0);
-        }
+        rb.AddForce((Input.GetAxis("Horizontal") + Input.acceleration.x) * speed * Time.deltaTime, 0, 0);
         
-        if (Input.GetKey("a")) {
-            rb.AddForce(-speed * Time.deltaTime, 0, 0);
-        }
-        
-        if (Input.GetKey("w")) {
-            rb.AddForce(0, 0, speed * Time.deltaTime);
-        }
-        
-        if (Input.GetKey("s")) {
-            rb.AddForce(0, 0, -speed * Time.deltaTime);
-        }
+        rb.AddForce(0, 0, (Input.GetAxis("Vertical") + Input.acceleration.y) * speed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other) {
