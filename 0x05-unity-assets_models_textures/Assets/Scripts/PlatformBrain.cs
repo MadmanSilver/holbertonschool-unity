@@ -27,6 +27,7 @@ public class PlatformBrain : MonoBehaviour
             foreach (GameObject flower in flowers) {
                 flower.SetActive(true);
             }
+            other.gameObject.transform.parent = transform.parent;
         }
     }
 }

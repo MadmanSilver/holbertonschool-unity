@@ -44,12 +44,14 @@ public class WorldBrain : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (Input.GetKeyDown(KeyCode.E)) {
             turning++;
         }
+    }
 
+    void FixedUpdate()
+    {
         if (turning > 0) {
             float rotation;
 
@@ -63,8 +65,10 @@ public class WorldBrain : MonoBehaviour
             }
 
             foreach (Transform platform in platforms) {
-                platform.RotateAround(new Vector3(start.position.x, start.position.y - 15, start.position.z), Vector3.forward, rotation);
-                platform.rotation = Quaternion.Euler(0, 0, 0);
+                /*platform.RotateAround(new Vector3(start.position.x, start.position.y - 15, start.position.z), Vector3.forward, rotation);
+                platform.rotation = Quaternion.Euler(0, 0, 0);*/
+                Vector3 origin = new Vector3(start.position.x, start.position.y - 15, start.position.z);
+                platform.position = origin + Quaternion.Euler(0, 0, rotation) * (platform.position - origin);
             }
         }
     }
