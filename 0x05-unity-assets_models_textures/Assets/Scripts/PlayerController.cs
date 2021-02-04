@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +23,12 @@ public class PlayerController : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+
+    public GameObject tutorial;
+    bool tutMove = false;
+    bool tutLook = false;
+    bool tutJump = false;
+    bool tutRotate = false;
 
     // Update is called once per frame
     void Update()
@@ -48,6 +55,27 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded) {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             transform.parent = null;
+            tutJump = true;
+            tutorial.transform.GetChild(3).GetComponent<Text>().color = Color.green;
+        }
+
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) {
+            tutMove = true;
+            tutorial.transform.GetChild(1).GetComponent<Text>().color = Color.green;
+        }
+
+        if (Mathf.Abs(Input.GetAxisRaw("Mouse Y")) > 0.1f || Mathf.Abs(Input.GetAxisRaw("Mouse X")) > 0.1f) {
+            tutLook = true;
+            tutorial.transform.GetChild(2).GetComponent<Text>().color = Color.green;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E)) {
+            tutRotate = true;
+            tutorial.transform.GetChild(4).GetComponent<Text>().color = Color.green;
+        }
+
+        if (tutMove && tutJump && tutLook && tutRotate) {
+            tutorial.SetActive(false);
         }
 
         velocity.y += gravity * Time.deltaTime;
@@ -56,6 +84,7 @@ public class PlayerController : MonoBehaviour
 
         if (transform.position.y < -40) {
             transform.position = respawn + new Vector3(0, 40, 0);
+            transform.parent = null;
         }
     }
 }
