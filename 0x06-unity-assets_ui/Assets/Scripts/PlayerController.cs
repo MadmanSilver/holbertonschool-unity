@@ -66,26 +66,29 @@ public class PlayerController : MonoBehaviour
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 transform.parent = null;
                 tutJump = true;
-                tutorial.transform.GetChild(3).GetComponent<Text>().color = Color.green;
+                if (tutorial != null)
+                    tutorial.transform.GetChild(3).GetComponent<Text>().color = Color.green;
             }
 
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) {
-                tutMove = true;
-                tutorial.transform.GetChild(1).GetComponent<Text>().color = Color.green;
-            }
+            if (tutorial != null) {
+                if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) {
+                    tutMove = true;
+                    tutorial.transform.GetChild(1).GetComponent<Text>().color = Color.green;
+                }
 
-            if (Mathf.Abs(Input.GetAxisRaw("Mouse Y")) > 0.1f || Mathf.Abs(Input.GetAxisRaw("Mouse X")) > 0.1f) {
-                tutLook = true;
-                tutorial.transform.GetChild(2).GetComponent<Text>().color = Color.green;
-            }
+                if (Mathf.Abs(Input.GetAxisRaw("Mouse Y")) > 0.1f || Mathf.Abs(Input.GetAxisRaw("Mouse X")) > 0.1f) {
+                    tutLook = true;
+                    tutorial.transform.GetChild(2).GetComponent<Text>().color = Color.green;
+                }
 
-            if (Input.GetKeyDown(KeyCode.E)) {
-                tutRotate = true;
-                tutorial.transform.GetChild(4).GetComponent<Text>().color = Color.green;
-            }
+                if (Input.GetKeyDown(KeyCode.E)) {
+                    tutRotate = true;
+                    tutorial.transform.GetChild(4).GetComponent<Text>().color = Color.green;
+                }
 
-            if (tutMove && tutJump && tutLook && tutRotate) {
-                tutorial.SetActive(false);
+                if (tutMove && tutJump && tutLook && tutRotate) {
+                    tutorial.SetActive(false);
+                }
             }
 
             velocity.y += gravity * Time.deltaTime;

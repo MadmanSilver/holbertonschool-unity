@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
     public Transform player;
     public PauseMenu pm;
 
+    public bool isInverted;
     public float sensitivity = 6.0f;
     public float distance = 6.25f;
 
@@ -17,6 +18,11 @@ public class CameraController : MonoBehaviour
 
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
+        if (PlayerPrefs.GetInt("Inverted") == 1) {
+            isInverted = true;
+        } else {
+            isInverted = false;
+        }
     }
 
     // Update is called once per frame
@@ -24,7 +30,11 @@ public class CameraController : MonoBehaviour
     {
         if (!pm.paused) {
             deltaX += Input.GetAxisRaw("Mouse X");
-            deltaY = Mathf.Clamp(deltaY - Input.GetAxisRaw("Mouse Y"), -14f, 14f);
+            if (isInverted) {
+                deltaY = Mathf.Clamp(deltaY + Input.GetAxisRaw("Mouse Y"), -14f, 14f);
+            } else {
+                deltaY = Mathf.Clamp(deltaY - Input.GetAxisRaw("Mouse Y"), -14f, 14f);
+            }
         }
     }
 

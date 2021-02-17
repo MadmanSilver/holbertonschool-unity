@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public Text timerText;
+    public Text winText;
 
     float totalTime = 0f;
     bool running = true;
@@ -21,5 +22,10 @@ public class Timer : MonoBehaviour
 
     public void Stop() {
         running = false;
+    }
+
+    public void Win() {
+        winText.text = timerText.text;
+        timerText.text = "";
     }
 }

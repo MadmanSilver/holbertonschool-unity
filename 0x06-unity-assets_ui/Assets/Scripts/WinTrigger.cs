@@ -8,12 +8,17 @@ public class WinTrigger : MonoBehaviour
     public Collider player;
     public Timer timer;
     public Text timerText;
+    public GameObject winCanvas;
+    public PauseMenu pm;
 
     void OnTriggerEnter(Collider other) {
         if (other == player) {
             timer.Stop();
-            timerText.fontSize = 60;
-            timerText.color = Color.green;
+            timer.Win();
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
+            pm.paused = true;
+            winCanvas.SetActive(true);
         }
     }
 }
