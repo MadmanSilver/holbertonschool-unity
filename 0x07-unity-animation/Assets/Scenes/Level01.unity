@@ -1168,6 +1168,7 @@ MonoBehaviour:
   playerControl: {fileID: 780502063}
   timer: {fileID: 848830592}
   tutorial: {fileID: 1911944911}
+  anim: {fileID: 1318683524}
 --- !u!1001 &1554457391
 PrefabInstance:
   m_ObjectHideFlags: 0
