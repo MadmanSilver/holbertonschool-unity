@@ -245,9 +245,117 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114589835210473740, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+    - {fileID: 114372649503696970, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
---- !u!1 &680351119
+--- !u!1 &228579400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7416752288784466097, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228579401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 599836867309221058, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228579402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1091283458777958, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228579403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1644997114004198, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228579404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1986733487743170, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &228579405 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95219300520550374, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228579406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3984258938351187810, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228579407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1469228564561163144, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228579408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1664295426898042, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228579409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1136128897566686, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228579410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1799026754646168, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &228579411 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95292425453911886, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &228579412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228579404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e38ecf9c012d246ba9e5b48dc962e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 228579405}
+  animationStateName: Take
+  controllerVisuals:
+  - {fileID: 228579403}
+  - {fileID: 228579402}
+  handJointPrefab: {fileID: 8513787482403080262, guid: 67541c9d1fd5e2c4798986ee73c07923, type: 3}
+  useCollidersForHandJoints: 1
+  useInputProfile: 1
+  inputProfileObject: {fileID: 223974226}
+  inputProfileModelParent: {fileID: 228579401}
+  inputProfileHandModelParent: {fileID: 228579400}
+--- !u!114 &228579413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228579410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e38ecf9c012d246ba9e5b48dc962e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 228579411}
+  animationStateName: Take
+  controllerVisuals:
+  - {fileID: 228579409}
+  - {fileID: 228579408}
+  handJointPrefab: {fileID: 8513787482403080262, guid: 67541c9d1fd5e2c4798986ee73c07923, type: 3}
+  useCollidersForHandJoints: 1
+  useInputProfile: 1
+  inputProfileObject: {fileID: 223974226}
+  inputProfileModelParent: {fileID: 228579407}
+  inputProfileHandModelParent: {fileID: 228579406}
+--- !u!1 &313183931
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,57 +363,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 680351120}
-  - component: {fileID: 680351125}
-  - component: {fileID: 680351124}
-  - component: {fileID: 680351123}
-  - component: {fileID: 680351122}
-  - component: {fileID: 680351121}
+  - component: {fileID: 313183932}
+  - component: {fileID: 313183933}
   m_Layer: 0
-  m_Name: Fishing Pole
-  m_TagString: Interactable
+  m_Name: Line
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &680351120
+--- !u!4 &313183932
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680351119}
+  m_GameObject: {fileID: 313183931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.95, z: 0.55}
-  m_LocalScale: {x: 0.08, y: 1.5, z: 0.08}
-  m_Children:
-  - {fileID: 2057043612}
-  m_Father: {fileID: 1128550682}
-  m_RootOrder: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 680351120}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &680351121
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680351119}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!120 &680351122
+--- !u!120 &313183933
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680351119}
+  m_GameObject: {fileID: 313183931}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -339,7 +426,8 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions: []
+  m_Positions:
+  - {x: 0, y: 0.48, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -347,8 +435,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0034255981
-        value: 0.03968239
+        time: 0
+        value: 0.03571427
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -393,8 +481,60 @@ LineRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!1 &680351119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 680351120}
+  - component: {fileID: 680351125}
+  - component: {fileID: 680351124}
+  - component: {fileID: 680351123}
+  - component: {fileID: 680351121}
+  m_Layer: 0
+  m_Name: Fishing Pole
+  m_TagString: Interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &680351120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680351119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.95, z: 0.55}
+  m_LocalScale: {x: 0.08, y: 1.5, z: 0.08}
+  m_Children:
+  - {fileID: 2057043612}
+  - {fileID: 313183932}
+  m_Father: {fileID: 1128550682}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &680351121
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680351119}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &680351123
 BoxCollider:
   m_ObjectHideFlags: 0
