@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using WebXR;
 
 #if WEBXR_INPUT_PROFILES
@@ -8,6 +9,8 @@ using WebXRInputProfile;
 #endif
 
 public class CustomControllerInteraction : MonoBehaviour {
+    public Text debugText;
+
     private FixedJoint attachJoint = null;
     private Rigidbody currentRigidBody = null;
     private List<Rigidbody> contactRigidBodies = new List<Rigidbody>();
@@ -505,7 +508,7 @@ public class CustomControllerInteraction : MonoBehaviour {
             }
         }
 
-        Debug.Log((currentRigidBody.position - handle.position));
+        debugText.text = (currentRigidBody.position - handle.position).ToString();
 
         currentRigidBody.position = (transform.position + (currentRigidBody.position - handle.position));
         attachJoint.connectedBody = currentRigidBody;
