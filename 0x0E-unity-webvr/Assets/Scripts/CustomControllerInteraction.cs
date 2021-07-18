@@ -510,8 +510,8 @@ public class CustomControllerInteraction : MonoBehaviour {
 
         debugText.text = (currentRigidBody.position - handle.position).ToString();
 
-        currentRigidBody.position = (transform.position + (currentRigidBody.position - handle.position));
-        attachJoint.connectedBody = currentRigidBody;
+        currentRigidBody.position = transform.position;
+        //attachJoint.connectedBody = currentRigidBody;
     }
 
     public void Drop()
