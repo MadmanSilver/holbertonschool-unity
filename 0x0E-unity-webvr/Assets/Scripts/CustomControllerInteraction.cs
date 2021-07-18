@@ -107,20 +107,14 @@ public class CustomControllerInteraction : MonoBehaviour {
         }
 
         // Get button A(0 or 1), or Axis Trigger/Grip (0 to 1), the larger between them all, by that order
-        float normalizedTime = controller.GetButton(WebXRController.ButtonTypes.ButtonA) ? 1 :
-                                                        Mathf.Max(controller.GetAxis(WebXRController.AxisTypes.Trigger),
-                                                        controller.GetAxis(WebXRController.AxisTypes.Grip));
+        float normalizedTime = controller.GetAxis(WebXRController.AxisTypes.Grip);
 
-        if (controller.GetButtonDown(WebXRController.ButtonTypes.Trigger)
-                || controller.GetButtonDown(WebXRController.ButtonTypes.Grip)
-                || controller.GetButtonDown(WebXRController.ButtonTypes.ButtonA))
+        if (controller.GetButtonDown(WebXRController.ButtonTypes.Grip))
         {
             Pickup();
         }
 
-        if (controller.GetButtonUp(WebXRController.ButtonTypes.Trigger)
-                || controller.GetButtonUp(WebXRController.ButtonTypes.Grip)
-                || controller.GetButtonUp(WebXRController.ButtonTypes.ButtonA))
+        if (controller.GetButtonUp(WebXRController.ButtonTypes.Grip))
         {
             Drop();
         }
@@ -510,6 +504,8 @@ public class CustomControllerInteraction : MonoBehaviour {
                 handle = child;
             }
         }
+
+        Debug.Log((currentRigidBody.position - handle.position));
 
         currentRigidBody.position = (transform.position + (currentRigidBody.position - handle.position));
         attachJoint.connectedBody = currentRigidBody;
