@@ -507,7 +507,7 @@ public class CustomControllerInteraction : MonoBehaviour {
         Vector3 nearestHandle = currentRigidBody.GetComponent<Interactable>().handles[0];
         foreach (Vector3 handle in currentRigidBody.GetComponent<Interactable>().handles) {
             if ((currentRigidBody.transform.TransformPoint(handle) - transform.position).magnitude < (nearestHandle - transform.position).magnitude) {
-                nearestHandle = handle;
+                nearestHandle = currentRigidBody.transform.TransformPoint(handle);
             }
         }
 
