@@ -120,6 +120,10 @@ public class CustomControllerInteraction : MonoBehaviour {
         if (controller.GetButtonUp(WebXRController.ButtonTypes.Grip)) {
             Drop();
         }
+        
+        if (controller.GetButtonDown(WebXRController.ButtonTypes.Trigger) && currentRigidBody) {
+            currentRigidBody.GetComponent<Interactable>().onTrigger.Invoke();
+        }
 
 #if WEBXR_INPUT_PROFILES
         if (loadedModel && useInputProfile)
@@ -500,14 +504,14 @@ public class CustomControllerInteraction : MonoBehaviour {
         if (!currentRigidBody)
             return;
 
-        Transform handle = currentRigidBody.transform;
-        foreach (Transform child in currentRigidBody.transform) {
-            if (child.gameObject.name == "Handle") {
-                handle = child;
+        Vector3 nearestHandle = currentRigidBody.GetComponent<Interactable>().handles[0];
+        foreach (Vector3 handle in currentRigidBody.GetComponent<Interactable>().handles) {
+            if ((currentRigidBody.transform.TransformPoint(handle) - transform.position).magnitude < (nearestHandle - transform.position).magnitude) {
+                nearestHandle = handle;
             }
         }
 
-        currentRigidBody.position = transform.position + (currentRigidBody.position - handle.position);
+        currentRigidBody.position = transform.position + (currentRigidBody.position - nearestHandle);
     }
 
     public void Drop()
