@@ -16,7 +16,7 @@ public class Fishing : MonoBehaviour
     void Update() {
         line.SetPositions(new Vector3[] {transform.TransformPoint(new Vector3(0f, 0.48f, 0f)), castPoint});
 
-        debugText.text = $"Point1 - x: {line.GetPosition(0).x} y: {line.GetPosition(0).y} z: {line.GetPosition(0).z}\nPoint2 - x: {line.GetPosition(1).x} y: {line.GetPosition(1).y} z: {line.GetPosition(1).z}";
+        debugText.text = $"Point1 - x: {line.GetPosition(0).x / 0.1} y: {line.GetPosition(0).y / 0.1} z: {line.GetPosition(0).z / 0.1}\nPoint2 - x: {line.GetPosition(1).x / 0.1} y: {line.GetPosition(1).y / 0.1} z: {line.GetPosition(1).z / 0.1}";
     }
 
     void LateUpdate() {
@@ -32,7 +32,7 @@ public class Fishing : MonoBehaviour
     }
 
     public void Cast() {
-        if (castPoint == Vector3.zero) {
+        if (castPoint != Vector3.zero) {
             return;
         }
 
@@ -44,7 +44,7 @@ public class Fishing : MonoBehaviour
     }
 
     public void Reel() {
-        if (castPoint != Vector3.zero) {
+        if (castPoint == Vector3.zero) {
             return;
         }
         
