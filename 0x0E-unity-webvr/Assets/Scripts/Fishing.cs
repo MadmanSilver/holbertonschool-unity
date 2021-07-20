@@ -23,8 +23,7 @@ public class Fishing : MonoBehaviour
     // Update is called once per frame
     void Update() {
         if (caught != null) {
-            castPoint = line.GetPosition(0) - new Vector3(0f, 0.3f, 0f);
-            caught.transform.position = castPoint;
+            castPoint = caught.transform.TransformPoint(new Vector3(0f, 0.5f, 0f));
         }
 
         line.SetPositions(new Vector3[] {transform.TransformPoint(new Vector3(0f, 0.48f, 0f)), castPoint});
@@ -41,7 +40,7 @@ public class Fishing : MonoBehaviour
             }
         }
 
-        debugText.text = $"Point1 - x: {line.GetPosition(0).x / 0.1f} y: {line.GetPosition(0).y / 0.1f} z: {line.GetPosition(0).z / 0.1f}\nPoint2 - x: {line.GetPosition(1).x / 0.1f} y: {line.GetPosition(1).y / 0.1f} z: {line.GetPosition(1).z / 0.1f}";
+        debugText.text = $"";
     }
 
     void LateUpdate() {
@@ -102,7 +101,9 @@ public class Fishing : MonoBehaviour
         castPoint = line.GetPosition(0) - new Vector3(0f, 0.3f, 0f);
         line.SetPosition(1, castPoint);
         caught = Object.Instantiate(fishPrefab, castPoint, Quaternion.identity);
-        caught.transform.parent = transform;
+        caught.GetComponent<ConfigurableJoint>().connectedBody = gameObject.GetComponent<Rigidbody>();
+        caught.GetComponent<ConfigurableJoint>().anchor = caught.transform.InverseTransformPoint(line.GetPosition(0));
+        caught.GetComponent<ConfigurableJoint>().anchor = transform.InverseTransformPoint(line.GetPosition(0));
         fishing = false;
     }
 }
