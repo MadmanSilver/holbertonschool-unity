@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1402355204778365564}
   - component: {fileID: 1911420480}
   - component: {fileID: 2903614466317157826}
+  - component: {fileID: 4634199816216928690}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Interactable
@@ -204,7 +205,7 @@ ConfigurableJoint:
   m_ProjectionAngle: 180
   m_ConfiguredInWorldSpace: 0
   m_SwapBodies: 0
-  m_BreakForce: 50
+  m_BreakForce: 100
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
@@ -222,18 +223,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c028a934c0c0e419e84f5a0abeb696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  release:
+--- !u!114 &4634199816216928690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402355204778365563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420894d01e0badd49aa677eb43f526cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handles:
+  - {x: 0, y: 0, z: 0}
+  onTrigger:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

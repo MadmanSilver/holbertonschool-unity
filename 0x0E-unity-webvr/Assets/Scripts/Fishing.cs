@@ -48,7 +48,7 @@ public class Fishing : MonoBehaviour
             return;
         }
 
-        if ((lastTipPosition - line.GetPosition(1)).magnitude > (line.GetPosition(0) - line.GetPosition(1)).magnitude + reelForce && caught == null) {
+        if ((lastTipPosition - line.GetPosition(1)).magnitude < (line.GetPosition(0) - line.GetPosition(1)).magnitude + reelForce && caught == null) {
             Reel();
         }
 
