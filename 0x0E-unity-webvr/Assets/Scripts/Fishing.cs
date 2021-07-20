@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fishing : MonoBehaviour
 {
+    public Text debugText;
     public LineRenderer line;
     public float reelForce = 1f;
     private Vector3 castPoint = Vector3.zero;
@@ -13,6 +15,8 @@ public class Fishing : MonoBehaviour
     // Update is called once per frame
     void Update() {
         line.SetPositions(new Vector3[] {transform.TransformPoint(new Vector3(0f, 0.48f, 0f)), castPoint});
+
+        debugText.text = $"Point1 - x: {line.GetPosition(0).x} y: {line.GetPosition(0).y} z: {line.GetPosition(0).z}\nPoint2 - x: {line.GetPosition(1).x} y: {line.GetPosition(1).y} z: {line.GetPosition(1).z}";
     }
 
     void LateUpdate() {
