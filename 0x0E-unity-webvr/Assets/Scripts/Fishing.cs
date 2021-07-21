@@ -29,7 +29,7 @@ public class Fishing : MonoBehaviour
         line.SetPositions(new Vector3[] {transform.TransformPoint(new Vector3(0f, 0.48f, 0f)), castPoint});
 
         if (fishing) {
-            if ((fishingTime + Time.deltaTime) / 1f > fishingTime / 1f && Random.Range(0, biteChance) == 0) {
+            if (fishingTime % 1f + Time.deltaTime % 1f >= 1f && Random.Range(0, biteChance) == 0) {
                 Bite();
             }
 
@@ -48,7 +48,7 @@ public class Fishing : MonoBehaviour
             return;
         }
 
-        if ((lastTipPosition - line.GetPosition(1)).magnitude < (line.GetPosition(0) - line.GetPosition(1)).magnitude + reelForce && caught == null) {
+        if ((lastTipPosition - line.GetPosition(1)).magnitude + reelForce < (line.GetPosition(0) - line.GetPosition(1)).magnitude && caught == null) {
             Reel();
         }
 
