@@ -249,10 +249,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 2
+  m_Radius: 0.2
+  m_Height: 0.5
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!54 &223974228
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1027,6 +1027,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1034554315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1854678450583440, guid: 54a613ba6e982e84db04156af08d6a89, type: 3}
+  m_PrefabInstance: {fileID: 228579399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1034554316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034554315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766ac8c414c586142a202d88f0c21c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 100
+  heldItemPosition: {x: 0.258, y: 0.115, z: 0.733}
+  heldItemRotation: {x: 56.93886, y: 0, z: 0}
 --- !u!1 &1128550681
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,12 +12,13 @@ public class Fishing : MonoBehaviour
     public float reelForce = 1f;
     public GameObject lure;
     public GameObject fishPrefab;
+    public GameObject caught = null;
+    
     private Vector3 castPoint = Vector3.zero;
     private RaycastHit hit;
     private Vector3 lastTipPosition;
     private bool fishing = false;
     private float biteTime = 0f;
-    private GameObject caught = null;
     private float fishingTime = 0f;
 
     // Update is called once per frame
